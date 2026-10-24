@@ -1,0 +1,268 @@
+/* HGR Wetzikon Entwurf: klar, frisch, verlässlich. Systemschriften, keine externen Dienste. */
+:root {
+  --weiss: #fbfcf8;
+  --salbei: #eaf0e4;
+  --tinte: #16302b;
+  --tinte-weich: #4a5f58;
+  --tanne: #1d5446;
+  --tanne-dunkel: #123a30;
+  --lind: #b8d84a;
+  --lind-dunkel: #8aa72a;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --rand: 1.25rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--tinte);
+  background: var(--weiss);
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--tanne); }
+a:focus-visible { outline: 3px solid var(--lind-dunkel); outline-offset: 3px; }
+h1, h2, h3 { font-weight: 800; line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+h3 { font-size: 1.4rem; }
+p { margin: 0 0 1em; }
+
+/* Entwurf-Hinweis */
+.hinweis {
+  background: var(--tinte);
+  color: #f2f6ee;
+  font-size: .9rem;
+  text-align: center;
+  padding: .55rem var(--rand);
+  border-bottom: 3px solid var(--lind);
+}
+
+/* Kopf */
+.kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem var(--rand);
+}
+.marke { display: inline-flex; align-items: center; gap: .7rem; color: var(--tinte); text-decoration: none; }
+.marke-kachel {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--tanne);
+  color: var(--lind);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+  border-radius: .6rem;
+}
+.marke-text { font-size: .78rem; font-weight: 700; line-height: 1.2; letter-spacing: .08em; text-transform: uppercase; }
+.kopf nav { display: flex; gap: 1.2rem; }
+.kopf nav a { color: var(--tinte-weich); text-decoration: none; font-weight: 600; font-size: .98rem; padding: .25rem 0; border-bottom: 3px solid transparent; }
+.kopf nav a:hover { border-bottom-color: var(--lind); color: var(--tinte); }
+
+/* Hero */
+.hero {
+  display: grid;
+  gap: 2rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem var(--rand) 3rem;
+}
+.vorspann {
+  display: inline-block;
+  margin-bottom: .9rem;
+  padding: .2rem .85rem;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: var(--lind);
+  color: var(--tanne-dunkel);
+  border-radius: 999px;
+}
+.hero h1 { font-size: clamp(2.3rem, 9vw, 3.9rem); margin-bottom: .45em; }
+.hero h1 span { color: var(--tanne); box-shadow: inset 0 -.32em 0 var(--lind); }
+.hero-satz { font-size: 1.15rem; color: var(--tinte-weich); max-width: 34rem; }
+.hero-knoepfe { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.4rem; margin-top: 1.6rem; }
+.hero-bild { margin: 0; }
+.hero-bild img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: 10px 10px 0 var(--lind);
+}
+
+.knopf {
+  display: inline-block;
+  background: var(--tanne);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: .85rem 1.7rem;
+  border-radius: .7rem;
+  box-shadow: 0 3px 0 var(--tanne-dunkel);
+  transition: transform .15s, box-shadow .15s;
+}
+.knopf:hover { transform: translateY(2px); box-shadow: 0 1px 0 var(--tanne-dunkel); }
+.knopf-leise { color: var(--tinte); font-weight: 700; text-decoration: underline; text-decoration-color: var(--lind-dunkel); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.knopf-hell { background: var(--lind); color: var(--tanne-dunkel); box-shadow: 0 3px 0 var(--lind-dunkel); }
+.knopf-hell:hover { box-shadow: 0 1px 0 var(--lind-dunkel); }
+.knopf-leise-hell { color: #f2f6ee; }
+
+/* Band mit den drei Leistungen */
+.band { background: var(--tanne); color: #fff; }
+.band ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: .9rem var(--rand);
+  max-width: 70rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .3rem 1.2rem;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.band li::before { content: ""; display: inline-block; width: .55rem; height: .55rem; margin-right: .6rem; background: var(--lind); border-radius: 50%; }
+
+/* Abschnitte */
+.abschnitt { max-width: 70rem; margin: 0 auto; padding: 3.2rem var(--rand); }
+.abschnitt-hell { max-width: none; background: var(--salbei); }
+.abschnitt-hell > .innen { max-width: calc(70rem - 2 * var(--rand)); margin: 0 auto; }
+.einleitung { font-size: 1.15rem; color: var(--tinte-weich); margin-bottom: 2rem; }
+
+.marke-vorschlag {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 .3rem .2rem 0;
+  padding: .1rem .65rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--tinte);
+  background: var(--lind);
+  border-radius: 999px;
+}
+
+/* Leistungen */
+.leistungen { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; }
+.leistung {
+  background: #fff;
+  border: 2px solid var(--tinte);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  display: grid;
+}
+.leistung img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.leistung-text { padding: 1.2rem 1.4rem 1.5rem; }
+.nummer { margin: 0 0 .2rem; font-size: .9rem; font-weight: 800; letter-spacing: .12em; color: var(--lind-dunkel); }
+.leistung h3 { font-size: 1.6rem; margin-bottom: .2em; }
+.vorschlag { margin: .2rem 0 .4rem; }
+.punkte { margin: 0; padding-left: 1.2rem; color: var(--tinte-weich); }
+.punkte li { margin-bottom: .25rem; }
+.punkte li::marker { color: var(--lind-dunkel); }
+
+/* Ablauf */
+.ablauf { margin: 1.4rem 0 0; padding: 0; list-style: none; display: grid; gap: 1rem; counter-reset: schritt; }
+.ablauf li {
+  counter-increment: schritt;
+  position: relative;
+  padding: 1rem 1.2rem 1rem 4rem;
+  background: #fff;
+  border-radius: .9rem;
+}
+.ablauf li::before {
+  content: counter(schritt);
+  position: absolute;
+  left: 1rem; top: 50%;
+  transform: translateY(-50%);
+  display: grid; place-items: center;
+  width: 2.2rem; height: 2.2rem;
+  background: var(--tanne);
+  color: var(--lind);
+  font-weight: 800;
+  border-radius: 50%;
+}
+
+/* Kontakt */
+.kontakt {
+  background: var(--tanne-dunkel);
+  color: #eaf0e4;
+  padding: 3.5rem var(--rand) 3.8rem;
+  text-align: center;
+}
+.kontakt > * { max-width: 44rem; margin-left: auto; margin-right: auto; }
+.kontakt h2 { color: #fff; }
+.kontakt-satz { font-size: 1.15rem; color: #cfdcc8; }
+.kontakt > .kontakt-liste { display: grid; gap: 1.6rem; max-width: 62rem; margin-top: 2.2rem; margin-bottom: 2.2rem; }
+.kontakt h3 { font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--lind); margin-bottom: .3rem; }
+.kontakt p, .kontakt address { margin-top: 0; margin-bottom: 0; font-style: normal; }
+.kontakt a { color: #fff; }
+.kontakt a.gross {
+  font-size: clamp(1.35rem, 6vw, 1.9rem);
+  font-weight: 700;
+  text-decoration-color: var(--lind);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  overflow-wrap: anywhere;
+}
+.kontakt-knoepfe { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .8rem 1.4rem; }
+
+/* Fester Anruf-Knopf nur auf dem Handy */
+.anruf-fest {
+  position: fixed;
+  right: 1rem; bottom: 1rem;
+  z-index: 10;
+  background: var(--lind);
+  color: var(--tanne-dunkel);
+  font-weight: 800;
+  text-decoration: none;
+  padding: .8rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(18, 58, 48, .35);
+}
+
+/* Fuss */
+.fuss { background: #0c2620; color: #b7c8bd; padding: 1.8rem var(--rand) 5rem; text-align: center; font-size: .9rem; }
+.fuss a { color: #dbe7d6; }
+.fuss-zeile { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.5rem; margin-bottom: 1rem; }
+.fuss-klein { max-width: 46rem; margin: 0 auto .5rem; font-size: .82rem; color: #9db0a4; }
+
+/* Ab Tablet */
+@media (min-width: 40rem) {
+  .kontakt > .kontakt-liste { grid-template-columns: repeat(2, 1fr); gap: 2rem 3rem; }
+  .ablauf { grid-template-columns: repeat(3, 1fr); }
+  .ablauf li { padding: 3.6rem 1.2rem 1.2rem; }
+  .ablauf li::before { left: 1.2rem; top: 1.1rem; transform: none; }
+}
+
+/* Desktop */
+@media (min-width: 62rem) {
+  :root { --rand: 2rem; }
+  body { font-size: 1.125rem; }
+  .hero { grid-template-columns: 1.1fr .9fr; align-items: center; gap: 4rem; padding-top: 2rem; padding-bottom: 4.5rem; }
+  .abschnitt { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .leistungen { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .leistung { grid-template-rows: auto 1fr; }
+  .leistung img { aspect-ratio: 4 / 3; }
+  .kontakt > .kontakt-liste { grid-template-columns: repeat(2, auto); justify-content: center; gap: 2rem 6rem; }
+  .anruf-fest { display: none; }
+  .fuss { padding-bottom: 2.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .knopf { transition: none; }
+}
